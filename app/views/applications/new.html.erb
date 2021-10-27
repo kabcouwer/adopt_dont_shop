@@ -1,17 +1,16 @@
-<center><%= form_with url: '/applications', method: :post, local: true do |form| %>
-<h1>Start Application:</h1>
-<br>
-<%= form.label :name, 'Name:' %>
-<%= form.text_field :name, required: true %>
-<%= form.label :street, 'Street:' %>
-<%= form.text_field :street, required: true %>
-<%= form.label :city, 'City:' %>
-<%= form.text_field :city, required: true %>
-<br><br>
-<%= form.label :state, 'State:' %>
-<%= form.text_field :state, required: true %>
-<%= form.label :zip_code, 'Zip Code:' %>
-<%= form.number_field :zip_code, required: true %>
-<br><br>
-<%= form.submit "Submit"%>
-<% end %></center>
+<section class="py-5 text-container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-6 mx-auto">
+      <h1>Start Application:</h1>
+      <%= bootstrap_form_with url: '/applications', method: :post, local: true do |form| %>
+        <%= form.text_field :name, required: true %>
+        <%= form.text_field :street, required: true %>
+        <%= form.text_field :city, required: true %>
+        <%= form.text_field :state, required: true %>
+        <%= form.number_field :zip_code, required: true %>
+
+        <%= form.submit "Submit"%>
+      <% end %>
+    </div>
+  </div>
+</section>

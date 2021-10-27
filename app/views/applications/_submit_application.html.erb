@@ -1,7 +1,12 @@
-<p>Submit Application Below:</p>
-<%= form_with url: "/applications/#{@application.id}", method: :post, local: true do |form| %>
-  <%= form.label :description, 'What makes me an ideal pet owner:' %>
-  <%= form.text_area :description, size: "70x5" %>
+<section class="py-5 text-container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-6 mx-auto">
+      <p>Submit Application Below:</p>
+      <%= bootstrap_form_with url: "/applications/#{@application.id}", method: :post, local: true do |form| %>
+        <%= form.text_area :description, label: 'What makes me an ideal candidate:', size: "70x5" %>
 
-  <%= form.submit "Submit Application!" %>
-<% end %>
+        <%= form.submit "Submit Application!" %>
+      <% end %>
+    </div>
+  </div>
+</section>

@@ -23,7 +23,7 @@ class Shelter < ApplicationRecord
   def self.shelters_with_pending_applications
     select(:shelters)
       .joins(pets: [:applications])
-      # binding.pry
+  
   end
 
   def pet_count

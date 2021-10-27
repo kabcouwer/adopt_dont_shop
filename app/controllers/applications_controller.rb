@@ -22,7 +22,7 @@ class ApplicationsController < ApplicationController
 
   def update
     @application = Application.find(params[:id])
-    @application.description = params[:description]
+    @application.update(application_params)
     @application.status = "Pending"
     @application.save
     redirect_to "/applications/#{@application.id}"
